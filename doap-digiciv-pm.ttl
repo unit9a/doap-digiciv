@@ -1,0 +1,272 @@
+@prefix : <https://unit9a.github.io/doap-digiciv/sub-ont/pm/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://unit9a.github.io/doap-digiciv/sub-ont/pm/> .
+
+<https://unit9a.github.io/doap-digiciv/sub-ont/pm/> rdf:type owl:Ontology ;
+                                                     owl:versionIRI <https://unit9a.github.io/doap-digiciv/sub-ont/pm/0.0.1> ;
+                                                     owl:imports <https://unit9a.github.io/doap-digiciv/sub-ont/common/0.0.1> ,
+                                                                 <https://w3id.org/mira/> ;
+                                                     rdfs:label "doap-digiciv simple project managment and workflow" ;
+                                                     <https://unit9a.github.io/doap-digiciv-common/purpose> "this provides light weight project management for digital activites like data analysis and opensource software development" .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/audience
+:audience rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :purpose ;
+          rdfs:domain :DataQuest ;
+          rdfs:range xsd:string ;
+          rdfs:description "entites leadership deems a dataa quest question relevant to" ;
+          rdfs:label "Audience Member" ;
+          <https://schema.org/name> "dqAudMem" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/context
+:context rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :purpose ;
+         rdfs:domain :DataQuest ;
+         rdfs:range xsd:string ;
+         rdfs:description "Social justice / moral ethical context of question being asked" ;
+         rdfs:label "Data Quest's Context" ;
+         <https://schema.org/name> "dqConext" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/framing
+:framing rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :question ;
+         rdfs:domain :Task ;
+         rdfs:range xsd:string .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/isStakeholder
+:isStakeholder rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :audience ;
+               rdfs:domain :Audience ;
+               rdfs:range xsd:boolean ;
+               rdfs:description "doe leadership think this Audience member will be harmed by a negative or neutral outcome of a data quest question"@en ;
+               rdfs:label "Audience is percieved Stakeholder" ;
+               <https://schema.org/name> "dqStakeholder" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/purpose
+:purpose rdf:type owl:DatatypeProperty ;
+         rdfs:domain :DataQuest ;
+         rdfs:range xsd:string ;
+         rdfs:description "reason leadership is asking these question" ;
+         rdfs:label "DataQuest's Purpose" ;
+         <https://schema.org/name> "dqPurpose" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/question
+:question rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :DataQuest ;
+          rdfs:range xsd:string ;
+          rdfs:description "a question leadership request data exploration or analysis for." ;
+          rdfs:label "Data Quest's Question(s)" ;
+          <https://schema.org/name> "dqQuestion" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/linked-data/cube#ComponentProperty
+<http://purl.org/linked-data/cube#ComponentProperty> rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://purl.org/linked-data/cube#DataSet
+<http://purl.org/linked-data/cube#DataSet> rdf:type owl:Class ;
+                                           rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://purl.org/linked-data/cube#DimensionProperty
+<http://purl.org/linked-data/cube#DimensionProperty> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://purl.org/linked-data/cube#MeasureProperty
+<http://purl.org/linked-data/cube#MeasureProperty> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://purl.org/ontology/bibo/AcademicArticle
+<http://purl.org/ontology/bibo/AcademicArticle> rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://semanticscience.org/resource/InformationContentEntity
+<http://semanticscience.org/resource/InformationContentEntity> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://semanticscience.org/resource/SIO_000000
+<http://semanticscience.org/resource/SIO_000000> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :_ddcpm-imports .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Activity
+:Activity rdf:type owl:Class ;
+          rdfs:comment "and effort expecting/requiring an action from a organization member or any of their resources" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Audience
+:Audience rdf:type owl:Class ;
+          <https://schema.org/name> "indivual or group leadership  percives will be interested in a result of an activity" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/DataQuest
+:DataQuest rdf:type owl:Class ;
+           rdfs:subClassOf :Project ;
+           owl:disjointWith :Development ;
+           rdfs:description "Qustions leadership generate request data exploration or analysis" ;
+           rdfs:label "Data Question" ;
+           <https://schema.org/name> "dq" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Development
+:Development rdf:type owl:Class ;
+             rdfs:subClassOf :Project ;
+             rdfs:label "a software development task. i.e. web site update, api integration" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Implication
+:Implication rdf:type owl:Class ;
+             rdfs:subClassOf :Result ;
+             owl:disjointWith :Outcome ;
+             rdfs:comment "any implication of an outcome that is deemed note worthy by any participating in the assesment" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Optional
+:Optional rdf:type owl:Class ;
+          rdfs:subClassOf :Task ;
+          owl:disjointWith :Required ;
+          rdfs:description "an activity optional to completing a project" ;
+          rdfs:label "Optional" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource :Optional ;
+   owl:annotatedProperty rdfs:label ;
+   owl:annotatedTarget "Optional" ;
+   rdfs:label "Recommened" ,
+              "Stretch Goal"
+ ] .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Outcome
+:Outcome rdf:type owl:Class ;
+         rdfs:subClassOf :Result ;
+         rdfs:comment "the description/state to things effected by an activity's concequences" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf :Activity .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Question
+:Question rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Task
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://schema.org/isPartOf> ;
+                                                       owl:someValuesFrom :DataQuest
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:description "a task of a data quest activity" ;
+          <https://schema.org/isPartOf> "ddcpm:DataQuest" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Required
+:Required rdf:type owl:Class ;
+          rdfs:subClassOf :Task ;
+          rdfs:label "Critical" ,
+                     """activity critical to completeing a project
+
+or 
+
+minimal requirement in activity's definition of done""" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Result
+:Result rdf:type owl:Class ;
+        rdfs:comment "the result of an activity at time of disengagement" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf :Activity ;
+      rdfs:description "an activity assigned to a project or team." ;
+      rdfs:label "Task" .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/Team
+:Team rdf:type owl:Class ;
+      rdfs:subClassOf :Activity .
+
+
+###  https://unit9a.github.io/doap-digiciv/sub-ont/pm/_ddcpm-imports
+:_ddcpm-imports rdf:type owl:Class .
+
+
+###  https://w3id.org/mira/Comparison
+<https://w3id.org/mira/Comparison> rdf:type owl:Class ;
+                                   rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/Context
+<https://w3id.org/mira/Context> rdf:type owl:Class ;
+                                rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/EffectSize
+<https://w3id.org/mira/EffectSize> rdf:type owl:Class ;
+                                   rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/Explanation
+<https://w3id.org/mira/Explanation> rdf:type owl:Class ;
+                                    rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/Mediator
+<https://w3id.org/mira/Mediator> rdf:type owl:Class ;
+                                 rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/Object
+<https://w3id.org/mira/Object> rdf:type owl:Class ;
+                               rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/RelationalProperty
+<https://w3id.org/mira/RelationalProperty> rdfs:subClassOf :_ddcpm-imports .
+
+
+###  https://w3id.org/mira/Sample
+<https://w3id.org/mira/Sample> rdfs:subClassOf :_ddcpm-imports .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Project
+                :Task
+                :Team
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

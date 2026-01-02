@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mira/" uri="https://raw.githubusercontent.com/muhai-project/mira/refs/heads/main/ontology/ontology.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://unit9a.github.io/doap-digiciv/sub-ont/pm/0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-pm.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://unit9a.github.io/doap-digiciv/sub-ont/common//0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-common.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://unit9a.github.io/doap-digiciv/sub-ont/common/0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-common.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-inverses-20130430" uri="https://www.w3.org/ns/prov-o-inverses#"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-inverses-20130430" uri="https://www.w3.org/ns/prov-o-inverses"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-20130430" uri="https://www.w3.org/ns/prov-o#"/>
+    <uri id="User Entered Import Resolution" name="https://unit9a.github.io/doap-digiciv-common/0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-common.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://unit9a.github.io/doap-digiciv/legal-impetus/0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-legal.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://schema.org/" uri="https://schema.org/docs/schemaorg.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-inverses-20130430" uri="https://www.w3.org/ns/prov-o-inverses-20130430"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-20130430" uri="https://www.w3.org/ns/prov-o#"/>
+    <uri id="Imports Wizard Entry" name="urn:ddcli:0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-legal.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/prov-o-inverses-20130430" uri="http://www.w3.org/ns/prov#"/>
+    <uri id="Imports Wizard Entry" name="urn:absolute:0.0.1" uri="file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/doap-digiciv-legal.ttl"/>
+    <group id="Folder Repository, directory=file:////192.168.10.20/projects/eowatch/data/kg/spec/doap-digiciv/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
